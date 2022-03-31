@@ -8,7 +8,7 @@ var placeHolder = document.getElementById('placeHolder')
 // add event listener click to start button and call function questions
 startBtn.addEventListener('click', changeColor)
 startBtn.addEventListener('click', changeContainer)
-startBtn.addEventListener('click', timer)
+startBtn.addEventListener('click', countdown)
 
 
 
@@ -26,14 +26,14 @@ function changeContainer() {
 var counter = 10
 //create a function
 var countdown = function() {
-    console.log(counter);
 //counter decrement
 counter--;
 if(counter === 0) {
-    console.log("Time's up");
+    window.alert("Time's up");
 //stop countdown
 clearInterval(startCountdown)
 };
+placeHolder.textContent = counter
 };
 
 var startCountdown = setInterval (countdown, 1000)
